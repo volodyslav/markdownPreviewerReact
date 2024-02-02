@@ -1,9 +1,36 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { marked } from "marked"
 
 const App = () => {
-  const [text, setText] = useState("")
+  const [text, setText] = useState(`
+  # H1
+  ## H2
+  ### H3
+  **bold text**
+  *italicized text*
+  - First item
+  - Second item
+  - Third item
+  > blockquote
+  \`code\`
+  [title](https://www.example.com)
+  ![alt text](image.jpg)
+  \`\`\`
+  function greet(name) {
+      console.log(\`Hello, ${name}!\`);
+  }
+  \`\`\`
+
+  `)
+  
   const [expandEditor, setExpandEditor] = useState(true)
   const [expandPreviewer, setExpandPreviewer] = useState(true)
+
+ useEffect(() => {
+  marked.setOptions({
+    breaks: true,
+  })
+ }, [])
 
   const editorExpand = () => {
     setExpandEditor(!expandEditor)
@@ -37,7 +64,7 @@ const App = () => {
       </svg>}
       </button>
         </div>
-        <div id="preview" className={` ${expandEditor ? "preview-text" : "preview-text-expanded"}`}>{text}</div>
+        <div id="preview" className={` ${expandEditor ? "preview-text" : "preview-text-expanded"}`} dangerouslySetInnerHTML={{ __html: marked(text)}}></div>
       </div>}
     </div>
   )

@@ -11,13 +11,13 @@ body{
 .center{
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-direction: column;
 }
 
 .editor-box{
   text-align: center;
-  margin: 2rem auto;
+  margin: 1rem auto;
   width: 40%;
   overscroll-behavior-block: contain;
   
@@ -69,8 +69,8 @@ body{
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px;
   min-height: 300px;
-  width: 50%;
-  margin: 2rem auto;
+  width: 60%;
+  margin: 1rem auto;
 }
 
 .preview-title{
@@ -85,7 +85,7 @@ body{
 }
 
 .preview-text{
-  padding: 2px;
+  padding: 1.5rem;
   min-height: 600px;
 }
 
