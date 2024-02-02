@@ -17,7 +17,7 @@ body{
 
 .editor-box{
   text-align: center;
-  margin: auto;
+  margin: 2rem auto;
   width: 40%;
   overscroll-behavior-block: contain;
   
@@ -31,11 +31,22 @@ body{
   font-size: larger;
   font-weight: 700;
   padding: 0.5rem;
-  border: 2px solid black;
- 
+  display: flex;
+  justify-content: space-between;
 }
 
-#editor{
+.editor-expand {
+  background-color: rgb(10, 109, 76);
+  border: none;
+  color: white;
+}
+
+.editor-expand:hover{
+  transform: scale(1.2);
+  color: rgb(18, 226, 157);
+}
+
+.editor{
   min-width: 98%;
   min-height: 260px;
   overflow: scroll;
@@ -44,25 +55,40 @@ body{
   box-shadow: 0px 0px 10px 0px;
   height: 300px;
 }
-
+.editor-expanded{
+  min-width: 98%;
+  overflow: scroll;
+  resize: none;
+  padding: 6px;
+  box-shadow: 0px 0px 10px 0px;
+  min-height: 700px;
+}
 
 
 #preview-box{
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px;
   min-height: 300px;
-  width: 80%;
-  text-align: center;
+  width: 50%;
   margin: 2rem auto;
 }
 
 .preview-title{
-  
   background-color: rgb(10, 109, 76);
   border-radius: 10px 10px 0px 0px;
   color: white;
   font-size: larger;
   font-weight: 700;
   padding: 1rem;
-  
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-text{
+  padding: 2px;
+  min-height: 600px;
+}
+
+.preview-text-expanded{
+  min-height: 600px;
 }
